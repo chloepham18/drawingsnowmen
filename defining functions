@@ -1,0 +1,27 @@
+def draw_circle(x,y,color,size):
+    circle = graphics.Circle(graphics.Point(x,y),size)
+    circle.setFill(color)
+    circle.draw(win)
+    
+def draw_head(x,y,size,color,window):
+    head = graphics.Circle(graphics.Point(x,y),size)
+    head.setFill(color)
+    eye1 = graphics.Circle(graphics.Point(x-8,y-8),size-((size*7)/8))
+    eye1.setFill("black")
+    eye2 = graphics.Circle(graphics.Point(x+8,y-8),size-((size*7)/8))
+    eye2.setFill("black")
+    nose = graphics.Polygon(graphics.Point(x-5,y),graphics.Point(x+5,y),graphics.Point(x,y+10))
+    nose.setFill("orange")
+
+    head.draw(window)
+    eye1.draw(window)
+    eye2.draw(window)
+    nose.draw(window)
+
+def draw_body(x,y,size,color,window):
+    draw_circle(x,y+2*size,color,size*(4/3))
+    draw_circle(x,y+4*size,color,size*(5/3))
+
+def draw_snowman(x,y,size,color,window):
+    draw_head(x,y,size,color,window)
+    draw_body(x,y,size,color,window)

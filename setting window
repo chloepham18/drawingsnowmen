@@ -1,0 +1,7 @@
+import graphics
+import random
+win = graphics.GraphWin ("Winter is coming.", 1000,1000)
+win.setBackground("lightblue")
+triangle = graphics.Polygon(graphics.Point(0,0),graphics.Point(0,1000), graphics.Point (1000,1000))
+triangle.setFill("white")
+triangle.draw(win)
